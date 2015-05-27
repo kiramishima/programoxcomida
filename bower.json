@@ -1,0 +1,17 @@
+{
+  "name": "programoxcomida",
+  "version": "1.0.0",
+  "authors": [
+    "Kira Mishima <kiramishima@outlook.com>"
+  ],
+  "description": "Programo x Comida Update",
+  "license": "MIT",
+  "homepage": "http://programoxcomida.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
