@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PXCApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Programo x Comida</title>
+	<meta name="description" content="Programo x Comida Site">
+    <meta name="google-site-verification" content="7lc5HyceLDqpV_6oNHteYFfxDJH7-S3DwnJKtNUKcRg" />
+    
+    <!-- Social Metatags -->
+    <meta view-head="" property="og:title" content="Programoxcomida">
+    <meta view-head="" property="og:description" content="Programo x Comida Site">
+    <meta view-head="" property="og:type" content="website">
+    <meta view-head="" property="og:image" content="https://sc.acamica.com/icons/social-300x300.png">
+    <meta view-head="" property="og:url" content="https://www.acamica.com/">
+    <meta view-head="" name="twitter:card" content="summary">
+    <meta view-head="" name="twitter:site" content="@programoxcomida">
+    <meta view-head="" name="twitter:title" content="Programoxcomida">
+    <meta view-head="" name="twitter:description" content="Programo x Comida Site">
+    <meta view-head="" name="twitter:image" content="https://sc.acamica.com/icons/social-300x300.png">
+    <meta view-head="" name="twitter:url" content="https://www.programoxcomida.com/">
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Angular Dependencies -->
+    <script src="js/vendor/angular/angular.min.js"></script>
+    <script src="js/vendor/angular/angular-animate.min.js"></script>
+    <script src="js/vendor/angular/angular-touch.min.js"></script>
+    <script src="js/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<!-- Angular Material CSS now available via Google CDN; version 0.8 used here -->
+    <link href="js/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="main-frame">
+    <header class="mobile-header">
+        <div class="global-wrap"><a class="head-btn right" ng-click="toggleRightMenu('user')" ng-class="{active: expandMenu.active &amp;&amp; expandMenu.menu === 'user'}" ac-expand-menu="" menu="user"><i class="md-person"></i></a><a ac-logged-in="true" class="head-btn right" ng-click="toggleRightMenu('courses')" ng-class="{active: expandMenu.active &amp;&amp; expandMenu.menu === 'courses'}" ac-expand-menu="" menu="courses"><i class="md-apps"></i></a><a class="head-btn left" ng-class="{active: mainMenu}" ng-click="toggleMenu()"><i class="md-menu"></i></a> <a ng-href="/" class="logo" href="/">Programo x Comida</a></div>
+    </header>
+    
+    <div class="side-active-shadow" ng-click="closeAllMenus()"></div>
+    <main class="content-frame" autoscroll="false" ngsf-fullscreen="">
+        <!-- uiView: main -->
+        <div ui-view="main" class="">
+            <div class="home" ac-home-slides="" active-slide="0" ac-full-height="" style="height: 658px;">
+                <div class="slide slide-1 light-text active" header-class="header-light" ng-class="{up: activeSlide>0, active: activeSlide===0}">
+                    <div class="global-wrap">
+                        <h1>Aprende tecnología, cambia tu mundo</h1>
+                        <br>
+                        <p>Somos una comunidad formada por jóvenes programadores entusiastas, en base a la necesidad de promover distintos lenguajes de programacion.</p>
+                        <a class="arrow" ng-click="nextSlide()"><i class="md-expand-more"></i></a>
+                    </div>
+                </div>
+                <div class="slide slide-2 slide-l down" header-class="header-dark" ng-class="{up: activeSlide>1, down: activeSlide<1, active: activeSlide===1}">
+                    <div class="global-wrap">
+                        <div class="inner-wrap">
+                            <h1>Consigue el trabajo soñado</h1>
+                            <p>Obtén un puesto inicial en uno de los <strong>empleos más demandados</strong> y <strong>mejor pagos</strong> como desarrollador web o mobile, o trabaja como freelancer desde la comodidad de tu casa.</p>
+                            <p>Tú decides, nosotros te ayudamos a hacerlo realidad.</p>
+                        </div>
+                        <div class="home-tp-logos">
+                            <h4>Aplica para trabajar en estas empresas (+200 más)</h4>
+                            <ul class="clearfix">
+                                <li class="google"></li>
+                                <li class="facebook"></li>
+                                <li class="globant"></li>
+                                <li class="meli"></li>
+                                <li class="twitter"></li>
+                                <li class="freelancer"></li>
+                                <li class="aerolab"></li>
+                                <li class="redmint"></li>
+                            </ul>
+                        </div><a class="arrow dark" ng-click="nextSlide()"><i class="md-expand-more"></i></a></div>
+                </div>
+                <div class="slide slide-3 slide-r light-text down" header-class="header-light" ng-class="{up: activeSlide>2, down: activeSlide<2, active: activeSlide===2}">
+                    <div class="global-wrap">
+                        <div class="inner-wrap">
+                            <h1>Una nueva y divertida forma de aprender</h1>
+                            <p>Con nuestras carreras y cursos interactivos, aprender tecnología es fácil y divertido. Completa cientos de <strong>desafíos de código</strong> y <strong>realiza proyectos</strong> en línea para poner tus habilidades en práctica.</p>
+                        </div><a class="arrow" ng-click="nextSlide()"><i class="md-expand-more"></i></a></div>
+                </div>
+                <div class="slide slide-4 down" header-class="header-dark" ng-class="{up: activeSlide>3, down: activeSlide<3, active: activeSlide===3}">
+                    <div class="global-wrap">
+                        <div class="inner-wrap">
+                            <h1>Reinvéntate. Todo el tiempo.</h1>
+                            <p>La tecnología avanza constantemente, no te quedes atrás. Nosotros te guiamos para que tengas las herramientas más adecuadas para el futuro, siempre.</p>
+                            <section class="home-paths dark">
+                                <h4>Comienza una carrera gratis ahora</h4>
+                                <ul>
+                                    <li><a href="/carreras/1/desarrollador-web"><span class="img"><span ac-back-img="'//cimg.acamica.com/paths/1/badge.svg'" style="background-image: url(https://cimg.acamica.com/paths/1/badge.svg);"></span></span> <span class="label">Desarrollador web</span></a></li>
+                                    <li><a href="/carreras/2/disenador-web"><span class="img"><span ac-back-img="'//cimg.acamica.com/paths/2/badge.svg'" style="background-image: url(https://cimg.acamica.com/paths/2/badge.svg);"></span></span> <span class="label">Diseñador web</span></a></li>
+                                    <li class="more-courses"><a href="/cursos"><span class="img"><span ac-back-img="'//cimg.acamica.com/27/badge.svg'" style="background-image: url(https://cimg.acamica.com/27/badge.svg);"></span></span> <span class="img"><span ac-back-img="'//cimg.acamica.com/34/badge.svg'" style="background-image: url(https://cimg.acamica.com/34/badge.svg);"></span></span> <span class="img"><span ac-back-img="'//cimg.acamica.com/40/badge.svg'" style="background-image: url(https://cimg.acamica.com/40/badge.svg);"></span></span> <span class="img"><span ac-back-img="'//cimg.acamica.com/28/badge.svg'" style="background-image: url(https://cimg.acamica.com/28/badge.svg);"></span></span> <span class="label"><b>40+</b> cursos</span></a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->
+    <script src="js/app/app.js"></script>
+</body>
+</html>
